@@ -19,7 +19,6 @@ class FullScreenImageViewController: UIViewController {
         presenter.searchImageArray = imagesArray
         presenter.currentPage = currentImageIndex
         viewCtrl.presenter = presenter
-//        viewCtrl.currentPage = currentImageIndex
         return viewCtrl
     }
 
@@ -41,33 +40,22 @@ class FullScreenImageViewController: UIViewController {
         return self.presenter.imagesCount()
     }
     
-//    public var currentPage: Int {
-//        set(page) {
-//            if page < numberOfImages {
-//                scrollToImage(withIndex: page, animated: false)
-//            } else {
-//                scrollToImage(withIndex: numberOfImages - 1, animated: false)
-//            }
-//        }
-//        get {
-//            return Int(searchImageDetailCollectionView.contentOffset.x / searchImageDetailCollectionView.frame.size.width)
-//        }
-//    }
-
     private var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-//        searchImageDetailCollectionView.reloadData()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        flowLayout.itemSize = view.bounds.size
+    }
+    
+    override func viewDidLayoutSubviews() {
         if self.presenter.currentPage != 0 {
             scrollToSelectedImage()
         }
-    }
-    
-    public override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        flowLayout.itemSize = view.bounds.size
     }
     
     private func initialSetup() {

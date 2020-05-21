@@ -134,7 +134,7 @@ class FullScreenImageCollectionViewCell: UICollectionViewCell {
         guard let imageDetailObj = searchImage, let imageUrl = imageDetailObj.largeImageURL else {
             return
         }
-        
+        imageView.image = UIImage(named: "placeHolderImage")
         imageView.setImage(url: imageUrl,completionBlock: { [weak self] (image, error, urlString) in
             DispatchQueue.main.async {
                 if let image = image{
