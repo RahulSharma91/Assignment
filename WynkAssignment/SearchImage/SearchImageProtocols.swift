@@ -15,6 +15,8 @@ public protocol SearchImageViewPresenterProtocol:class{
     
     var suggestions:[RecentSearch]? { get set }
     
+    var shouldLoadMoreData: Bool { get set }
+    
     func getPhotos(_ searchText:String?)
     
     func reset()
@@ -35,7 +37,7 @@ public protocol SearchImagePresenterViewProtocol:class{
     
     func reloadSuggestions()
     
-    func onErrorOccurred(errorMsg: String)
+    func onErrorOccurred(errorMsg: String, showAlert:Bool)
 }
 
 public protocol SearchImagePresenterInteractorProtocol:class{

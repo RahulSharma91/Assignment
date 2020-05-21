@@ -18,10 +18,10 @@ class WebServiceManager {
         }
         let searchRequest = URLRequest(url: searchURL)
 
-        APIHandler.GET(urlRequest: searchRequest) { (responseDict, error) in
+        APIHandler.request(urlRequest: searchRequest) { (responseDict, error) in
                 if let _ = error{
                     completionBlock(nil,searchText, error)
-                }else{
+                } else {
                  completionBlock(ResponseParser.parsePhotoSearchApiResponse(responseDataDict: responseDict),searchText,nil)
             }
         }

@@ -34,6 +34,9 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
     /// SuggestionsArray
     var suggestions:[RecentSearch]?
     
+    /// bool to decide whether to load more data or not
+    var shouldLoadMoreData: Bool = true
+    
     var pageNo = 0
     
     init(with delegate:SearchImagePresenterViewProtocol) {
@@ -61,7 +64,7 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
         self.searchText = currentSearchText
         
         if let searchArray = self.searchImageArray, !searchArray.isEmpty{
-             self.pageNo = self.pageNo + 1
+            self.pageNo = self.pageNo + 1
         } else {
             self.pageNo =  1
             self.view?.showLoader()
@@ -69,26 +72,32 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
         
         self.callInProgress = true
         
-        self.interactor.getImages(currentSearchText,pageNo:pageNo ) { (searchResult,searchString ,error) in
-                self.callInProgress = false
-                self.view?.hideLoader()
-                if self.searchText != searchString{
-                    return
-                }
-                if let searchError = error{
-                    self.view?.onErrorOccurred(errorMsg: searchError.localizedDescription)
-                } else if let result = searchResult {
-                    if let photosArray = result.searchImagesArray {
-                            if self.searchImageArray == nil{
-                                self.searchImageArray = photosArray
-                            }else{
-                                self.searchImageArray?.append(contentsOf: photosArray)
-                            }
-                            self.view?.reloadView(self.searchImageArray)
+        self.interactor.getImages(currentSearchText,pageNo:pageNo ) { [weak self] (searchResult,searchString ,error) in
+            guard let `self` = self else { return }
+            if !self.shouldLoadMoreData{
+                return
+            }
+            self.callInProgress = false
+            self.view?.hideLoader()
+            if self.searchText != searchString{
+                return
+            }
+            if let searchError = error{
+                self.shouldLoadMoreData = false
+                self.view?.onErrorOccurred(errorMsg: searchError.localizedDescription, showAlert: (self.searchImageArray == nil))
+            } else if let result = searchResult {
+                if let photosArray = result.searchImagesArray {
+                    if self.searchImageArray == nil{
+                        self.searchImageArray = photosArray
+                    }else{
+                        self.searchImageArray?.append(contentsOf: photosArray)
                     }
-                } else {
-                    self.view?.onErrorOccurred(errorMsg: "Something went wrong")
+                    self.view?.reloadView(self.searchImageArray)
                 }
+            } else {
+                self.shouldLoadMoreData = false
+                self.view?.onErrorOccurred(errorMsg: "Something went wrong", showAlert: (self.searchImageArray == nil))
+            }
         }
     }
     
@@ -118,7 +127,7 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
         guard  let suggestions = self.suggestions else {
             return false
         }
-         
+        
         return !suggestions.isEmpty
     }
     

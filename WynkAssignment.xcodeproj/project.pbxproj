@@ -47,6 +47,12 @@
 		C2B729F124768ACB00037C77 /* FullScreenImageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F024768ACB00037C77 /* FullScreenImageViewRouter.swift */; };
 		C2B729F324768ADF00037C77 /* FullScreenImageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F224768ADF00037C77 /* FullScreenImageProtocols.swift */; };
 		C2B729F92476A9C500037C77 /* FullScreenImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F82476A9C500037C77 /* FullScreenImageCollectionViewCell.swift */; };
+		C2B729FC2476BADF00037C77 /* SearchImageViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729FB2476BADF00037C77 /* SearchImageViewPresenterTest.swift */; };
+		C2B729FE2476BCFA00037C77 /* SearchImageViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729FD2476BCFA00037C77 /* SearchImageViewMock.swift */; };
+		C2B72A002476BDFB00037C77 /* SearchImageViewInteractorMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729FF2476BDFB00037C77 /* SearchImageViewInteractorMock.swift */; };
+		C2B72A042476C8E400037C77 /* Response.json in Resources */ = {isa = PBXBuildFile; fileRef = C2B72A032476C8E400037C77 /* Response.json */; };
+		C2B72A092476DCC200037C77 /* FullScreenImageViewPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B72A082476DCC200037C77 /* FullScreenImageViewPresenterTest.swift */; };
+		C2B72A0D2476DCFE00037C77 /* FullScreenImageViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B72A0C2476DCFE00037C77 /* FullScreenImageViewMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +110,12 @@
 		C2B729F024768ACB00037C77 /* FullScreenImageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewRouter.swift; sourceTree = "<group>"; };
 		C2B729F224768ADF00037C77 /* FullScreenImageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageProtocols.swift; sourceTree = "<group>"; };
 		C2B729F82476A9C500037C77 /* FullScreenImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C2B729FB2476BADF00037C77 /* SearchImageViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewPresenterTest.swift; sourceTree = "<group>"; };
+		C2B729FD2476BCFA00037C77 /* SearchImageViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewMock.swift; sourceTree = "<group>"; };
+		C2B729FF2476BDFB00037C77 /* SearchImageViewInteractorMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchImageViewInteractorMock.swift; sourceTree = "<group>"; };
+		C2B72A032476C8E400037C77 /* Response.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Response.json; sourceTree = "<group>"; };
+		C2B72A082476DCC200037C77 /* FullScreenImageViewPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewPresenterTest.swift; sourceTree = "<group>"; };
+		C2B72A0C2476DCFE00037C77 /* FullScreenImageViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +177,9 @@
 		C218AE2524755CB800BE4F51 /* WynkAssignmentTests */ = {
 			isa = PBXGroup;
 			children = (
+				C2B72A072476D63800037C77 /* FullScreenImageViewTest */,
+				C2B72A032476C8E400037C77 /* Response.json */,
+				C2B729FA2476BAAB00037C77 /* SearchImageViewTest */,
 				C218AE2624755CB800BE4F51 /* WynkAssignmentTests.swift */,
 				C218AE2824755CB800BE4F51 /* Info.plist */,
 			);
@@ -310,6 +325,25 @@
 			path = FullScreenImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
+		C2B729FA2476BAAB00037C77 /* SearchImageViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				C2B729FB2476BADF00037C77 /* SearchImageViewPresenterTest.swift */,
+				C2B729FD2476BCFA00037C77 /* SearchImageViewMock.swift */,
+				C2B729FF2476BDFB00037C77 /* SearchImageViewInteractorMock.swift */,
+			);
+			path = SearchImageViewTest;
+			sourceTree = "<group>";
+		};
+		C2B72A072476D63800037C77 /* FullScreenImageViewTest */ = {
+			isa = PBXGroup;
+			children = (
+				C2B72A082476DCC200037C77 /* FullScreenImageViewPresenterTest.swift */,
+				C2B72A0C2476DCFE00037C77 /* FullScreenImageViewMock.swift */,
+			);
+			path = FullScreenImageViewTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -403,6 +437,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B72A042476C8E400037C77 /* Response.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,7 +489,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2B729FE2476BCFA00037C77 /* SearchImageViewMock.swift in Sources */,
+				C2B72A092476DCC200037C77 /* FullScreenImageViewPresenterTest.swift in Sources */,
 				C218AE2724755CB800BE4F51 /* WynkAssignmentTests.swift in Sources */,
+				C2B72A0D2476DCFE00037C77 /* FullScreenImageViewMock.swift in Sources */,
+				C2B729FC2476BADF00037C77 /* SearchImageViewPresenterTest.swift in Sources */,
+				C2B72A002476BDFB00037C77 /* SearchImageViewInteractorMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

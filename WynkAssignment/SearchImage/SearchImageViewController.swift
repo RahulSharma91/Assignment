@@ -25,9 +25,6 @@ class SearchImageViewController: UIViewController {
     /// presenter of view
     var presenter:SearchImageViewPresenter!
     
-    /// bool to decide whether to load more data or not
-    var shouldLoadMoreData: Bool = true
-    
     /// searchString contains text to be searched.
     var searchString = ""
     
@@ -104,7 +101,7 @@ class SearchImageViewController: UIViewController {
     }
     
     func isLoadingIndexPath(_ indexPath: IndexPath) -> Bool {
-        guard shouldLoadMoreData, let imagesArray = self.presenter.searchImageArray else { return false}
+        guard self.presenter.shouldLoadMoreData, let imagesArray = self.presenter.searchImageArray else { return false}
         return indexPath.row == imagesArray.count
     }
 }
@@ -148,9 +145,12 @@ extension SearchImageViewController: SearchImagePresenterViewProtocol{
         }
     }
     
-    func onErrorOccurred(errorMsg: String) {
+    func onErrorOccurred(errorMsg: String,showAlert: Bool) {
         DispatchQueue.main.async {
-            self.showAlert(with: "Error", message: errorMsg)
+            self.imagesCollectionView.reloadData()
+            if  showAlert  {
+                self.showAlert(with: "Error", message: errorMsg)
+            }
         }
     }
 }

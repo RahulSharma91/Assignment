@@ -43,7 +43,7 @@ extension SearchImageViewController: UICollectionViewDataSource {
             return 0
         }
         if imagesDataArray.count > 0{
-            return shouldLoadMoreData ? imagesDataArray.count + 1 : imagesDataArray.count
+            return self.presenter.shouldLoadMoreData ? imagesDataArray.count + 1 : imagesDataArray.count
         }else{
             return 0
         }
@@ -70,7 +70,7 @@ extension SearchImageViewController: UICollectionViewDataSource {
         guard  let imagesDataArray = self.presenter.searchImageArray else{
             return
         }
-        if indexPath.item == imagesDataArray.count - 1 && self.shouldLoadMoreData  {
+        if indexPath.item == imagesDataArray.count - 1 && self.presenter.shouldLoadMoreData  {
             self.presenter.getPhotos(self.searchString)
         } else if let photoArray = self.presenter.searchImageArray, let photoCell = cell as? SearchImageCollectionViewCell{
             let item = photoArray[indexPath.row]

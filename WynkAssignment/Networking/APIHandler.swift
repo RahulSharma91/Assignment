@@ -13,7 +13,7 @@ typealias serviceArrayResponse = (_ data: [Any]?,_ error:Error?) -> Void
 typealias serviceDictResponse = (_ data: [String:Any]?,_ error:Error?) -> Void
 
 class APIHandler {
-    static func GET(urlRequest : URLRequest, completionBlock:@escaping serviceDictResponse) {
+    static func request(urlRequest : URLRequest, completionBlock:@escaping serviceDictResponse) {
         URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, response, error) in
             
             if let _ = error {
