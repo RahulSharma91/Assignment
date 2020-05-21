@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FullScreenImageCollectionViewCell" id="gTV-IL-0wX" customClass="FullScreenImageCollectionViewCell" customModule="WynkAssignment" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O6N-qb-MwV">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeHolderImage" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-V1-xlm">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="width" secondItem="5nV-FH-22M" secondAttribute="width" id="F8R-uo-kvD"/>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="leading" secondItem="ATX-VW-mce" secondAttribute="leading" id="Sv8-jX-9W2"/>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="height" secondItem="5nV-FH-22M" secondAttribute="height" id="cP0-XX-tFW"/>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="trailing" secondItem="ATX-VW-mce" secondAttribute="trailing" id="g4X-wc-Zn7"/>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="bottom" secondItem="ATX-VW-mce" secondAttribute="bottom" id="xaN-kN-p4I"/>
+                            <constraint firstItem="ybl-V1-xlm" firstAttribute="top" secondItem="ATX-VW-mce" secondAttribute="top" id="yYx-zP-Q06"/>
+                        </constraints>
+                        <viewLayoutGuide key="contentLayoutGuide" id="ATX-VW-mce"/>
+                        <viewLayoutGuide key="frameLayoutGuide" id="5nV-FH-22M"/>
+                    </scrollView>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="O6N-qb-MwV" firstAttribute="leading" secondItem="ZNv-fP-HMI" secondAttribute="leading" id="8Rw-zh-9RE"/>
+                <constraint firstItem="ZNv-fP-HMI" firstAttribute="trailing" secondItem="O6N-qb-MwV" secondAttribute="trailing" id="ajb-XN-uzy"/>
+                <constraint firstItem="ZNv-fP-HMI" firstAttribute="top" secondItem="O6N-qb-MwV" secondAttribute="top" id="cjA-5g-bcc"/>
+                <constraint firstItem="ZNv-fP-HMI" firstAttribute="bottom" secondItem="O6N-qb-MwV" secondAttribute="bottom" id="skc-qk-Aql"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZNv-fP-HMI"/>
+            <connections>
+                <outlet property="imageView" destination="ybl-V1-xlm" id="8uW-Bd-Lgk"/>
+                <outlet property="scrollView" destination="O6N-qb-MwV" id="CqY-p8-NAv"/>
+            </connections>
+            <point key="canvasLocation" x="139" y="80"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="placeHolderImage" width="136.5" height="92"/>
+    </resources>
+</document>

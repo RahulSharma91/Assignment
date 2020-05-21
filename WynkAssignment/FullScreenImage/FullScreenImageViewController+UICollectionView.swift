@@ -27,7 +27,7 @@ extension FullScreenImageViewController: UICollectionViewDataSource {
     }
 }
 
-extension FullScreenImageViewController: UICollectionViewDelegate {
+extension FullScreenImageViewController: UICollectionViewDelegateFlowLayout {
     
     public func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         animateImageTransition = true
@@ -37,10 +37,8 @@ extension FullScreenImageViewController: UICollectionViewDelegate {
         animateImageTransition = false
     }
     
-    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        if let cell = cell as? FullScreenImageCollectionViewCell {
-            cell.setNewImage(animated: animateImageTransition)
-        }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return collectionView.bounds.size
     }
 
 }

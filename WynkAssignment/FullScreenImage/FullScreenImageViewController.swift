@@ -31,17 +31,10 @@ class FullScreenImageViewController: UIViewController {
     public var numberOfImages: Int {
         return self.presenter.imagesCount()
     }
-    
-    private var flowLayout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        flowLayout.itemSize = view.bounds.size
     }
     
     override func viewDidLayoutSubviews() {
@@ -53,15 +46,12 @@ class FullScreenImageViewController: UIViewController {
     private func initialSetup() {
         self.view.backgroundColor = UIColor.black
         registerNibs()
-        if let layout = self.searchImageDetailCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            self.flowLayout = layout
-        }
         searchImageDetailCollectionView.dataSource = self
         searchImageDetailCollectionView.delegate = self
     }
     
-    private func registerNibs() {        
-        searchImageDetailCollectionView.register(FullScreenImageCollectionViewCell.self, forCellWithReuseIdentifier: "FullScreenImageCollectionViewCell")
+    private func registerNibs() {
+        searchImageDetailCollectionView.register(FullScreenImageCollectionViewCell.nib, forCellWithReuseIdentifier: FullScreenImageCollectionViewCell.reuseIdentifier)
     }
     
     private func scrollToImage(withIndex: Int, animated: Bool = false) {
