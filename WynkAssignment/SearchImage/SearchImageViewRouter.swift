@@ -22,7 +22,6 @@ extension SearchImageViewRouter : SearchImagePresenterRouterProtocol {
     
     func pushToFullScreenImageViewController(sourceView: UIViewController,searchData: [SearchImage], index: Int) {
         let viewCtrl = FullScreenImageViewController.instantiateViewController(imagesArray: searchData, currentImageIndex: index)
-        viewCtrl.backgroundColor = UIColor.black
         sourceView.navigationController?.pushViewController(viewCtrl, animated: true)
     }
     

@@ -27,14 +27,6 @@ class FullScreenImageViewController: UIViewController {
     var presenter:FullScreenImageViewPresenterProtocol!
     
     var animateImageTransition = false
-    public var backgroundColor: UIColor {
-        get {
-            return view.backgroundColor!
-        }
-        set(newBackgroundColor) {
-            view.backgroundColor = newBackgroundColor
-        }
-    }
     
     public var numberOfImages: Int {
         return self.presenter.imagesCount()
@@ -59,6 +51,7 @@ class FullScreenImageViewController: UIViewController {
     }
     
     private func initialSetup() {
+        self.view.backgroundColor = UIColor.black
         registerNibs()
         if let layout = self.searchImageDetailCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
             self.flowLayout = layout
