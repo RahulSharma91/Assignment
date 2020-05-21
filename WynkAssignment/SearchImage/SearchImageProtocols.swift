@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public protocol SearchImageViewPresenterProtocol:class{
     
@@ -21,6 +22,8 @@ public protocol SearchImageViewPresenterProtocol:class{
     func checkIfSuggestionsAvailable(_ searchText:String)
     
     func canShowSuggestions() -> Bool
+    
+    func callBackOnImageSelection(index:Int)
 }
 
 public protocol SearchImagePresenterViewProtocol:class{
@@ -44,4 +47,5 @@ public protocol SearchImagePresenterInteractorProtocol:class{
 
 public protocol SearchImagePresenterRouterProtocol:class{
     
+    func pushToFullScreenImageViewController(sourceView: UIViewController,searchData: [SearchImage], index: Int)
 }

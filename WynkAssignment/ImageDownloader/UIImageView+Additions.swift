@@ -44,7 +44,7 @@ extension UIImageView {
     
     
     
-    func setImage(url:String){
+    func setImage(url:String, completionBlock:completionBlock? = nil ){
         self.lastActiveUrl = url
         if let associatedOperations = self.associatedOperations, let addedOperation = associatedOperations[url]{
             addedOperation.queuePriority = .high
@@ -58,12 +58,16 @@ extension UIImageView {
             /// if new image is required to download then ImageDownloadManager's method will return operation corresponding to downloading image, which is then added to associated operations dictionary, else download operation will be nil when image is in cache and completion block is used to set downloaded image after downloading image.
             if let downloadOperation = ImageDownloader.sharedInstance.getImageFor(url: url, callBack: { [weak self] (image, error, urlString) in
                 if let lastActiveURL = self?.lastActiveUrl, let downloadedImage = image, let downloadedUrl = urlString{
-                    if lastActiveURL == urlString{
-                        DispatchQueue.main.async {
-                           self?.image = downloadedImage
+                    self?.associatedOperations?.removeValue(forKey: downloadedUrl)
+                    if lastActiveURL == urlString {
+                        if let completionCallBack = completionBlock{
+                            completionCallBack(image, error,url)
+                        } else {
+                            DispatchQueue.main.async {
+                               self?.image = downloadedImage
+                            }
                         }
                     }
-                    self?.associatedOperations?.removeValue(forKey: downloadedUrl)
                 }
             }){
                 if self.associatedOperations == nil{
@@ -73,5 +77,5 @@ extension UIImageView {
             }
         }
     }
-
+    
 }

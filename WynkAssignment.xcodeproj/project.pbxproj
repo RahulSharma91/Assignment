@@ -40,6 +40,13 @@
 		C218AE7E24765F6D00BE4F51 /* SearchImageViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C218AE7D24765F6D00BE4F51 /* SearchImageViewController+UICollectionView.swift */; };
 		C218AE8024765F8500BE4F51 /* SearchImageViewController+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C218AE7F24765F8500BE4F51 /* SearchImageViewController+UISearchBar.swift */; };
 		C218AE83247663AD00BE4F51 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C218AE82247663AD00BE4F51 /* UIViewController+Extension.swift */; };
+		C2B729E324767ADF00037C77 /* FullScreenImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729E224767ADF00037C77 /* FullScreenImageViewController.swift */; };
+		C2B729EB24768A9000037C77 /* FullScreenImageViewController+UICollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729EA24768A9000037C77 /* FullScreenImageViewController+UICollectionView.swift */; };
+		C2B729ED24768AA500037C77 /* FullScreenImageViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729EC24768AA500037C77 /* FullScreenImageViewPresenter.swift */; };
+		C2B729EF24768AB600037C77 /* FullScreenImageViewInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729EE24768AB600037C77 /* FullScreenImageViewInteractor.swift */; };
+		C2B729F124768ACB00037C77 /* FullScreenImageViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F024768ACB00037C77 /* FullScreenImageViewRouter.swift */; };
+		C2B729F324768ADF00037C77 /* FullScreenImageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F224768ADF00037C77 /* FullScreenImageProtocols.swift */; };
+		C2B729F92476A9C500037C77 /* FullScreenImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B729F82476A9C500037C77 /* FullScreenImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +97,13 @@
 		C218AE7D24765F6D00BE4F51 /* SearchImageViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchImageViewController+UICollectionView.swift"; sourceTree = "<group>"; };
 		C218AE7F24765F8500BE4F51 /* SearchImageViewController+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchImageViewController+UISearchBar.swift"; sourceTree = "<group>"; };
 		C218AE82247663AD00BE4F51 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
+		C2B729E224767ADF00037C77 /* FullScreenImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewController.swift; sourceTree = "<group>"; };
+		C2B729EA24768A9000037C77 /* FullScreenImageViewController+UICollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FullScreenImageViewController+UICollectionView.swift"; sourceTree = "<group>"; };
+		C2B729EC24768AA500037C77 /* FullScreenImageViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewPresenter.swift; sourceTree = "<group>"; };
+		C2B729EE24768AB600037C77 /* FullScreenImageViewInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewInteractor.swift; sourceTree = "<group>"; };
+		C2B729F024768ACB00037C77 /* FullScreenImageViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageViewRouter.swift; sourceTree = "<group>"; };
+		C2B729F224768ADF00037C77 /* FullScreenImageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageProtocols.swift; sourceTree = "<group>"; };
+		C2B729F82476A9C500037C77 /* FullScreenImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FullScreenImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +221,13 @@
 		C218AE542475669C00BE4F51 /* FullScreenImage */ = {
 			isa = PBXGroup;
 			children = (
+				C2B729E424767BDF00037C77 /* Views */,
+				C2B729E224767ADF00037C77 /* FullScreenImageViewController.swift */,
+				C2B729EA24768A9000037C77 /* FullScreenImageViewController+UICollectionView.swift */,
+				C2B729EC24768AA500037C77 /* FullScreenImageViewPresenter.swift */,
+				C2B729EE24768AB600037C77 /* FullScreenImageViewInteractor.swift */,
+				C2B729F024768ACB00037C77 /* FullScreenImageViewRouter.swift */,
+				C2B729F224768ADF00037C77 /* FullScreenImageProtocols.swift */,
 			);
 			path = FullScreenImage;
 			sourceTree = "<group>";
@@ -271,6 +292,22 @@
 				C218AE82247663AD00BE4F51 /* UIViewController+Extension.swift */,
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C2B729E424767BDF00037C77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C2B729E524767BDF00037C77 /* FullScreenImageCollectionViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C2B729E524767BDF00037C77 /* FullScreenImageCollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C2B729F82476A9C500037C77 /* FullScreenImageCollectionViewCell.swift */,
+			);
+			path = FullScreenImageCollectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,11 +419,14 @@
 				C218AE5F24756AB300BE4F51 /* RecentSearch.swift in Sources */,
 				C218AE7E24765F6D00BE4F51 /* SearchImageViewController+UICollectionView.swift in Sources */,
 				C218AE1024755CB300BE4F51 /* AppDelegate.swift in Sources */,
+				C2B729ED24768AA500037C77 /* FullScreenImageViewPresenter.swift in Sources */,
 				C218AE7624763D6500BE4F51 /* SearchImageViewInteractor.swift in Sources */,
 				C218AE432475626700BE4F51 /* WebServiceUtility.swift in Sources */,
 				C218AE4A2475642700BE4F51 /* ImageDownloadOperation.swift in Sources */,
 				C218AE1224755CB300BE4F51 /* SceneDelegate.swift in Sources */,
+				C2B729F124768ACB00037C77 /* FullScreenImageViewRouter.swift in Sources */,
 				C218AE7A2476403900BE4F51 /* SearchImageProtocols.swift in Sources */,
+				C2B729E324767ADF00037C77 /* FullScreenImageViewController.swift in Sources */,
 				C218AE582475671F00BE4F51 /* SearchImageViewPresenter.swift in Sources */,
 				C218AE7C24765F5400BE4F51 /* SearchImageViewController+UITableView.swift in Sources */,
 				C218AE5B24756A1E00BE4F51 /* SearchResult.swift in Sources */,
@@ -396,12 +436,16 @@
 				C218AE4C2475643900BE4F51 /* UIImageView+Additions.swift in Sources */,
 				C218AE6D2476343300BE4F51 /* DBManager.swift in Sources */,
 				C218AE56247566FB00BE4F51 /* SearchImageViewController.swift in Sources */,
+				C2B729F92476A9C500037C77 /* FullScreenImageCollectionViewCell.swift in Sources */,
+				C2B729EB24768A9000037C77 /* FullScreenImageViewController+UICollectionView.swift in Sources */,
 				C218AE65247571C400BE4F51 /* SearchImageCollectionViewCell.swift in Sources */,
 				C218AE8024765F8500BE4F51 /* SearchImageViewController+UISearchBar.swift in Sources */,
+				C2B729EF24768AB600037C77 /* FullScreenImageViewInteractor.swift in Sources */,
 				C218AE6F2476346000BE4F51 /* RecentSearchStorageHandler.swift in Sources */,
 				C218AE69247571E900BE4F51 /* LoadMoreCollectionViewCell.swift in Sources */,
 				C218AE452475628900BE4F51 /* ResponseParser.swift in Sources */,
 				C218AE742476350600BE4F51 /* AppConstants.swift in Sources */,
+				C2B729F324768ADF00037C77 /* FullScreenImageProtocols.swift in Sources */,
 				C218AE7824763D7B00BE4F51 /* SearchImageViewRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

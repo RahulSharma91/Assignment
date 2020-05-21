@@ -18,9 +18,9 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
     /// object of view for which this class acts as presenter
     weak var view:SearchImagePresenterViewProtocol?
     
-    var interactor:SearchImageViewInteractor!
+    var interactor:SearchImagePresenterInteractorProtocol!
     
-    var router:SearchImageViewRouter!
+    var router:SearchImagePresenterRouterProtocol!
     
     /// search text to be searched
     var searchText:String = ""
@@ -120,5 +120,11 @@ class SearchImageViewPresenter:NSObject,SearchImageViewPresenterProtocol {
         }
          
         return !suggestions.isEmpty
+    }
+    
+    func callBackOnImageSelection(index:Int) {
+        if let viewCtrl = self.view as? UIViewController, let imagesArray = self.searchImageArray {
+            self.router.pushToFullScreenImageViewController(sourceView: viewCtrl, searchData: imagesArray, index: index)
+        }
     }
 }
