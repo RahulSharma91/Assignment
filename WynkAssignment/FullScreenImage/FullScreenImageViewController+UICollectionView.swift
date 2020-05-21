@@ -42,11 +42,5 @@ extension FullScreenImageViewController: UICollectionViewDelegate {
             cell.setNewImage(animated: animateImageTransition)
         }
     }
-    
-    public func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-        if let cell = view as? FullScreenImageCollectionViewCell {
-            collectionView.layoutIfNeeded()
-            cell.setNewImage(animated: animateImageTransition)
-        }
-    }
+
 }
